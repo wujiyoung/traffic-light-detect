@@ -67,11 +67,6 @@ int main()
 
 		frame.copyTo(srcImage);
 
-		// Adjust the brightness
-		// frame.convertTo(img, img.type(), a, b);
-		// frame(Rect(0, 0, frame.cols, frame.rows / 2)).copyTo(frameRoi);
-		// frameRoi.convertTo(img, img.type(), a, b);
-		// frame.convertTo(img, img.type(), a, b);
 		frame.copyTo(img);
 
 		imgRed.create(img.rows, img.cols, CV_8UC1);
@@ -91,6 +86,7 @@ int main()
 		//	history_results.push_back(result);
 		//	continue;
 		//}
+		
 		result = multiPreidict2(result, greenlgs);
 
 		img = showResult(frame, result, redlgs, greenlgs);
